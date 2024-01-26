@@ -1,0 +1,20 @@
+#chat-container {
+    margin: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#chat-box {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#message-input {
+    flex-grow: 1; /* Allows the input to grow and fill available space */
+}
+
+button {
+    padding: 5px;
+}
