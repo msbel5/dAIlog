@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dAIlog")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c35f1385056b74f4ce3102e8af1986227e63478")]
 [assembly: System.Reflection.AssemblyProductAttribute("dAIlog")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dAIlog")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

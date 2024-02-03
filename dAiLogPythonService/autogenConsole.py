@@ -11,6 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
+print(current_dir)
 config_list_path = os.path.join(current_dir, "OAI_CONFIG_LIST.json")
 logger.info("Using config list path: %s", config_list_path)
 
@@ -97,35 +98,18 @@ group_chat = GroupChat(
 )
 manager = GroupChatManager(groupchat=group_chat, llm_config=llm_config, code_execution_config={"use_docker": False})
 
+prompt = """Develop a sophisticated Python trading bot capable of securely logging 
+into a specified stock trading service, utilizing advanced AI algorithms to conduct a comprehensive analysis of stock 
+market trends and individual stock performances. This bot should be equipped to handle high-frequency trading, operating
+ on various time scales including daily, hourly, and down to the second, to execute well-timed buy and sell orders. 
+ It should have the capability to dynamically adjust its trading strategies based on real-time market data, predict 
+ future market movements with high accuracy, and automatically optimize its algorithms to continuously improve 
+ its decision-making processes for maximizing profits. Additionally, ensure the bot includes robust risk management 
+ features, adheres to pre-set trading limits to minimize potential losses, and generates detailed performance 
+ reports for user review."""
 
-# Function to start group chat with a given message
-def start_chat(message):
-    user_proxy.initiate_chat(manager, message=message)
+
+user_proxy.initiate_chat(manager, message=prompt)
 
 
-# Main loop for chat interaction
-while True:
-    # Accept user's question from the console
-    user_question = input("\nEnter your question (or type 'exit' to quit):\n")
-    if user_question.lower() == 'exit':
-        break
 
-    # Start the group chat with the user's question
-    start_chat(user_question)
-
-    # Display responses from each round of the conversation
-    for round_number in range(group_chat.max_round):
-        print(f"\nRound {round_number + 1}:")
-        for agent in group_chat.agents:
-            if agent.latest_message:
-                print(f"{agent.name}: {agent.latest_message['content']}")
-
-        # Check if conversation is terminated
-        if any(agent.latest_message and agent.latest_message['content'].endswith("TERMINATE") for agent in group_chat.agents):
-            break
-
-# Reset the agents at the end
-for agent in group_chat.agents:
-    agent.reset()
-
-print("\nGroup chat ended.")

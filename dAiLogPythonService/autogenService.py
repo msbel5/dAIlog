@@ -92,7 +92,7 @@ def setup_autogen():
         llm_config={"config_list": config_list_gpt4},
         code_execution_config={"use_docker": False}
     )
-    
+
     executor = autogen.UserProxyAgent(
         name="Executor",
         system_message="Executor. Execute the code written by the engineer and report the result.",
@@ -104,12 +104,12 @@ def setup_autogen():
         },
     )
 
-    group_chat = GroupChat(
+    groupchat = GroupChat(
         agents=[user_proxy, coder, analyst, engineer, scientist, planner, critic,executor],  # Other agents
         messages=[],
         max_round=10
     )
-    manager = GroupChatManager(groupchat=group_chat, llm_config=llm_config, code_execution_config={"use_docker": False})
+    manager = GroupChatManager(groupchat=groupchat, llm_config=llm_config, code_execution_config={"use_docker": False})
 
     return user_proxy, manager
 

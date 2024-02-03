@@ -154,3 +154,6 @@
 /Users/macgyver/RiderProjects/dAIlog/bin/Debug/net8.0/dAiLogPythonService/venv/lib/python3.9/site-packages/argparse-1.4.0.dist-info/metadata.json
 /Users/macgyver/RiderProjects/dAIlog/bin/Debug/net8.0/dAiLogPythonService/venv/lib/python3.9/site-packages/CORScanner/origins.json
 /Users/macgyver/RiderProjects/dAIlog/bin/Debug/net8.0/dAiLogPythonService/venv/lib/python3.9/site-packages/matplotlib/backends/web_backend/package.json
+/Users/macgyver/RiderProjects/dAIlog/bin/Debug/net8.0/appsettingsSample.json
+/Users/macgyver/RiderProjects/dAIlog/bin/Debug/net8.0/dAiLogPythonService/OAI_CONFIG_LIST_sample.json
+/Users/macgyver/RiderProjects/dAIlog/obj/Debug/net8.0/dAIlog.sourcelink.json
